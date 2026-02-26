@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cafe Maple - Menu</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Patrick+Hand&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "rgb(var(--color-primary) / <alpha-value>)",
+                        "primary-hover": "rgb(var(--color-primary-hover) / <alpha-value>)",
+                        "background-light": "rgb(var(--color-background-light) / <alpha-value>)",
+                        "background-dark": "rgb(var(--color-background-dark) / <alpha-value>)",
+                        "surface": "rgb(var(--color-surface) / <alpha-value>)",
+                        "text-main": "rgb(var(--color-text-main) / <alpha-value>)",
+                        "text-muted": "rgb(var(--color-text-muted) / <alpha-value>)",
+                        "accent": "rgb(var(--color-accent) / <alpha-value>)",
+                        "border-color": "rgb(var(--color-border) / <alpha-value>)",
+                        "shadow-color": "rgb(var(--color-shadow) / <alpha-value>)",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "heading": ["Fredoka", "sans-serif"],
+                        "body": ["Nunito", "sans-serif"],
+                        "hand": ["Patrick Hand", "cursive"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "2xl": "3rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "card": "0px 4px 0px rgb(var(--color-shadow))",
+                        "card-hover": "0px 6px 0px rgb(var(--color-shadow))",
+                        "floating": "0px 8px 0px rgb(var(--color-shadow))",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        :root {
+            --color-primary: 217 140 95;
+            --color-primary-hover: 192 123 83;
+            --color-background-light: 253 251 247;
+            --color-background-dark: 34 23 16;
+            --color-surface: 255 254 240;
+            --color-text-main: 92 75 67;
+            --color-text-muted: 156 140 132;
+            --color-accent: 244 211 94;
+            --color-border: 240 230 210;
+            --color-shadow: 232 222 197;
+        }
+
+        :root.dark {
+            --color-primary: 240 133 71;
+            --color-primary-hover: 214 116 59;
+            --color-background-light: 26 22 20;
+            --color-background-dark: 26 22 20;
+            --color-surface: 45 36 31;
+            --color-text-main: 253 250 243;
+            --color-text-muted: 163 150 140;
+            --color-accent: 244 211 94;
+            --color-border: 74 58 49;
+            --color-shadow: 13 11 10;
+        }
+
+        body {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main font-body antialiased min-h-screen flex items-center justify-center selection:bg-primary/20 p-4">
+
+    <div
+        class="w-full max-w-md bg-surface border-2 border-border-color shadow-floating rounded-2xl p-8 relative flex flex-col items-center">
+        <!-- Decoration -->
+        <div class="absolute -top-6 bg-background-light border-2 border-border-color rounded-full p-2 shadow-card">
+            <span class="material-symbols-outlined text-primary text-4xl block">local_cafe</span>
+        </div>
+
+        <button id="themeToggleBtn"
+            class="absolute top-4 right-4 bg-background-light border-2 border-border-color shadow-sm hover:translate-y-[-1px] hover:shadow-card transition-all duration-200 p-2 rounded-full text-text-muted hover:text-primary flex items-center justify-center cursor-pointer"
+            aria-label="Toggle Theme">
+            <span class="material-symbols-outlined text-[18px] dark:hidden">dark_mode</span>
+            <span class="material-symbols-outlined text-[18px] hidden dark:block">light_mode</span>
+        </button>
+
+        <h1 class="font-heading font-bold text-3xl mt-6 mb-2 text-center">Cafe Maple</h1>
+        <p class="text-text-muted text-center mb-8 font-medium">Welcome to our digital cozy corner.</p>
+
+        <div class="w-full flex flex-col gap-4">
+            <a href="design.html"
+                class="group relative bg-background-light border-2 border-border-color rounded-xl p-4 flex items-center gap-4 hover:-translate-y-1 hover:shadow-card hover:border-primary transition-all duration-200">
+                <div
+                    class="bg-primary/10 text-primary p-2 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">palette</span>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="font-heading font-semibold text-lg">Brand Identity</h2>
+                    <p class="text-sm text-text-muted">Design system & assets</p>
+                </div>
+                <span
+                    class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">arrow_forward_ios</span>
+            </a>
+
+            <a href="terms.html"
+                class="group relative bg-background-light border-2 border-border-color rounded-xl p-4 flex items-center gap-4 hover:-translate-y-1 hover:shadow-card hover:border-primary transition-all duration-200">
+                <div
+                    class="bg-primary/10 text-primary p-2 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">gavel</span>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="font-heading font-semibold text-lg">Terms of Service</h2>
+                    <p class="text-sm text-text-muted">Rules & guidelines</p>
+                </div>
+                <span
+                    class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">arrow_forward_ios</span>
+            </a>
+
+            <a href="privacy.html"
+                class="group relative bg-background-light border-2 border-border-color rounded-xl p-4 flex items-center gap-4 hover:-translate-y-1 hover:shadow-card hover:border-primary transition-all duration-200">
+                <div
+                    class="bg-primary/10 text-primary p-2 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">shield</span>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="font-heading font-semibold text-lg">Privacy Policy</h2>
+                    <p class="text-sm text-text-muted">Data protection & info</p>
+                </div>
+                <span
+                    class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">arrow_forward_ios</span>
+            </a>
+        </div>
+
+        <div class="mt-8 text-center border-t border-border-color border-dashed pt-4 w-full">
+            <p class="font-hand text-text-muted text-lg transform -rotate-2">Enjoy your stay! 🍁</p>
+        </div>
+    </div>
+
+    <script>
+        const themeBtn = document.getElementById('themeToggleBtn');
+        const toggleTheme = () => {
+            document.documentElement.classList.toggle('dark');
+        };
+        if (themeBtn) {
+            themeBtn.addEventListener('click', toggleTheme);
+        }
+    </script>
+</body>
+
+</html>
