@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cafe Maple - Brand Identity Board</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&amp;family=Nunito:ital,wght@0,200..1000;1,200..1000&amp;family=Patrick+Hand&amp;family=Manrope:wght@200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "rgb(var(--color-primary) / <alpha-value>)",
+                        "primary-hover": "rgb(var(--color-primary-hover) / <alpha-value>)",
+                        "background-light": "rgb(var(--color-background-light) / <alpha-value>)",
+                        "background-dark": "rgb(var(--color-background-dark) / <alpha-value>)",
+                        "surface": "rgb(var(--color-surface) / <alpha-value>)",
+                        "text-main": "rgb(var(--color-text-main) / <alpha-value>)",
+                        "text-muted": "rgb(var(--color-text-muted) / <alpha-value>)",
+                        "accent": "rgb(var(--color-accent) / <alpha-value>)",
+                        "border-color": "rgb(var(--color-border) / <alpha-value>)",
+                        "shadow-color": "rgb(var(--color-shadow) / <alpha-value>)",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "heading": ["Fredoka", "sans-serif"],
+                        "body": ["Nunito", "sans-serif"],
+                        "hand": ["Patrick Hand", "cursive"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "2xl": "3rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "card": "0px 4px 0px rgb(var(--color-shadow))",
+                        "card-hover": "0px 6px 0px rgb(var(--color-shadow))",
+                        "floating": "0px 8px 0px rgb(var(--color-shadow))",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        :root {
+            --color-primary: 217 140 95;
+            --color-primary-hover: 192 123 83;
+            --color-background-light: 253 251 247;
+            --color-background-dark: 34 23 16;
+            --color-surface: 255 254 240;
+            --color-text-main: 92 75 67;
+            --color-text-muted: 156 140 132;
+            --color-accent: 244 211 94;
+            --color-border: 240 230 210;
+            --color-shadow: 232 222 197;
+        }
+
+        :root.dark {
+            --color-primary: 240 133 71;
+            --color-primary-hover: 214 116 59;
+            --color-background-light: 26 22 20;
+            --color-background-dark: 26 22 20;
+            --color-surface: 45 36 31;
+            --color-text-main: 253 250 243;
+            --color-text-muted: 163 150 140;
+            --color-accent: 244 211 94;
+            --color-border: 74 58 49;
+            --color-shadow: 13 11 10;
+        }
+
+        /* Custom Texture Utility */
+        .bg-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        /* Grid Pattern */
+        .bg-grid-pattern {
+            background-size: 20px 20px;
+            background-image: linear-gradient(to right, rgba(217, 140, 95, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(217, 140, 95, 0.1) 1px, transparent 1px);
+        }
+
+        /* Diagonal stripes for transparency visualization */
+        .bg-stripes {
+            background-image: linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0), linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main font-display antialiased min-h-screen flex flex-col overflow-x-hidden selection:bg-primary/20">
+    <div class="relative w-full h-full flex-grow flex flex-col">
+        <!-- Main Layout Container -->
+        <div
+            class="layout-container flex h-full grow flex-col max-w-[1400px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+            <!-- Header Section -->
+            <header
+                class="flex flex-wrap justify-between items-end gap-6 mb-10 pb-6 border-b-2 border-border-color border-dashed">
+                <div class="flex flex-col gap-2">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary text-4xl">local_cafe</span>
+                        <h1 class="text-text-main text-4xl md:text-5xl font-heading font-bold tracking-tight">
+                            Cafe Maple <span class="text-text-muted font-light font-display opacity-50 text-3xl">//
+                                Identity</span>
+                        </h1>
+                    </div>
+                    <p class="text-primary text-lg font-body font-medium flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-accent"></span>
+                        design template
+                    </p>
+                </div>
+                <div class="hidden sm:flex items-center gap-4">
+                    <button id="themeToggleBtn"
+                        class="bg-surface border-2 border-border-color shadow-card hover:translate-y-[-2px] hover:shadow-card-hover transition-all duration-200 p-3 rounded-full font-bold text-text-main flex items-center justify-center cursor-pointer"
+                        aria-label="Toggle Theme">
+                        <span class="material-symbols-outlined text-[20px] dark:hidden">dark_mode</span>
+                        <span class="material-symbols-outlined text-[20px] hidden dark:block">light_mode</span>
+                    </button>
+                    <button
+                        class="bg-surface border-2 border-border-color shadow-card hover:translate-y-[-2px] hover:shadow-card-hover transition-all duration-200 px-6 py-3 rounded-full font-bold text-text-main flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[20px]">download</span>
+                        Export Assets
+                    </button>
+                    <button
+                        class="bg-primary text-white shadow-card border-2 border-primary hover:bg-primary-hover hover:border-primary-hover hover:translate-y-[-2px] hover:shadow-card-hover transition-all duration-200 px-6 py-3 rounded-full font-bold flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[20px]">share</span>
+                        Share Board
+                    </button>
+                </div>
+            </header>
+            <!-- Masonry Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-6 lg:gap-8 items-start">
+                <!-- Column 1: Logo & Branding (Spans 5 cols on XL) -->
+                <div class="flex flex-col gap-6 xl:col-span-5 w-full">
+                    <!-- Logo Construction Card -->
+                    <section
+                        class="bg-surface border-2 border-border-color shadow-card rounded-xl p-8 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-4 opacity-50">
+                            <span class="material-symbols-outlined text-4xl text-border-color">architecture</span>
+                        </div>
+                        <h2 class="text-text-main text-xl font-heading font-bold mb-6 flex items-center gap-2">
+                            Icon Construction
+                        </h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- App Icon -->
+                            <div class="flex flex-col gap-3 group/icon1">
+                                <div id="target-icon1"
+                                    class="aspect-square bg-surface border-[4px] border-primary rounded-full flex items-center justify-center relative shadow-sm group-hover/icon1:scale-105 transition-transform duration-300">
+                                    <div
+                                        class="absolute inset-2 border-[2px] border-dashed border-primary/40 rounded-full">
+                                    </div>
+                                    <div class="relative flex items-center justify-center">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-7xl drop-shadow-sm">local_cafe</span>
+                                        <!-- Leaf pattern inside the cup -->
+                                        <span
+                                            class="material-symbols-outlined absolute top-[25px] left-[26px] text-surface text-[26px]"
+                                            style="font-variation-settings: 'FILL' 1;">eco</span>
+                                    </div>
+                                    <div
+                                        class="absolute bottom-4 flex gap-1 opacity-0 group-hover/icon1:opacity-100 transition-opacity duration-200 z-10">
+                                        <button
+                                            class="dl-btn bg-background-light p-1.5 rounded-full border border-border-color text-primary hover:bg-primary hover:text-white shadow-sm flex items-center justify-center"
+                                            title="Download PNG (512px)" data-type="png"
+                                            data-target="target-icon1"><span
+                                                class="material-symbols-outlined text-[16px]">image</span></button>
+                                        <button
+                                            class="dl-btn bg-background-light p-1.5 rounded-full border border-border-color text-primary hover:bg-primary hover:text-white shadow-sm flex items-center justify-center"
+                                            title="Download SVG" data-type="svg" data-target="target-icon1"><span
+                                                class="material-symbols-outlined text-[16px]">data_object</span></button>
+                                    </div>
+                                </div>
+                                <p class="text-center text-sm font-bold text-text-muted">Classic Teacup</p>
+                            </div>
+
+                            <!-- Monochrome / Inverted -->
+                            <div class="flex flex-col gap-3 group/icon2">
+                                <div id="target-icon2"
+                                    class="aspect-square bg-primary/10 border-2 border-dashed border-primary/40 rounded-full flex items-center justify-center p-4 relative group-hover/icon2:scale-105 transition-transform duration-300">
+                                    <div
+                                        class="w-full h-full bg-primary rounded-full flex items-center justify-center relative">
+                                        <span class="material-symbols-outlined text-white text-6xl"
+                                            style="font-variation-settings: 'FILL' 1;">emoji_food_beverage</span>
+                                        <span
+                                            class="material-symbols-outlined absolute top-[30px] left-[52%] -translate-x-1/2 text-primary text-[28px]"
+                                            style="font-variation-settings: 'FILL' 1;">nest_eco_leaf</span>
+                                    </div>
+                                    <div
+                                        class="absolute bottom-1 right-1 flex gap-1 opacity-0 group-hover/icon2:opacity-100 transition-opacity duration-200 z-10">
+                                        <button
+                                            class="dl-btn bg-surface p-1.5 rounded-full border border-border-color text-primary hover:bg-primary hover:text-white shadow-sm flex items-center justify-center"
+                                            title="Download PNG (512px)" data-type="png"
+                                            data-target="target-icon2"><span
+                                                class="material-symbols-outlined text-[16px]">image</span></button>
+                                        <button
+                                            class="dl-btn bg-surface p-1.5 rounded-full border border-border-color text-primary hover:bg-primary hover:text-white shadow-sm flex items-center justify-center"
+                                            title="Download SVG" data-type="svg" data-target="target-icon2"><span
+                                                class="material-symbols-outlined text-[16px]">data_object</span></button>
+                                    </div>
+                                </div>
+                                <p class="text-center text-sm font-bold text-text-muted">Maple Emblem</p>
+                            </div>
+
+                            <!-- Line Art / Stamp -->
+                            <div class="flex flex-col gap-3 group/icon3">
+                                <div id="target-icon3"
+                                    class="aspect-square bg-transparent border-[4px] border-text-main rounded-full flex items-center justify-center relative shadow-sm group-hover/icon3:scale-105 transition-transform duration-300">
+                                    <div
+                                        class="absolute inset-3 border-[2px] border-text-muted rounded-full pointer-events-none">
+                                    </div>
+                                    <div class="flex flex-col items-center -mt-2">
+                                        <span class="material-symbols-outlined text-primary text-[32px] mb-1">eco</span>
+                                        <span class="material-symbols-outlined text-text-main text-5xl">coffee</span>
+                                    </div>
+                                    <div
+                                        class="absolute bottom-2 flex gap-1 opacity-0 group-hover/icon3:opacity-100 transition-opacity duration-200 z-10">
+                                        <button
+                                            class="dl-btn bg-surface p-1.5 rounded-full border border-border-color text-primary hover:bg-primary hover:text-white shadow-sm flex items-center justify-center"
+                                            title="Download PNG (512px)" data-type="png"
+                                            data-target="target-icon3"><span
+                                                class="material-symbols-outlined text-[16px]">image</span></button>
+                                        <button
+                                            class="dl-btn bg-surface p-1.5 rounded-full border border-border-color text-primary hover:bg-primary hover:text-white shadow-sm flex items-center justify-center"
+                                            title="Download SVG" data-type="svg" data-target="target-icon3"><span
+                                                class="material-symbols-outlined text-[16px]">data_object</span></button>
+                                    </div>
+                                </div>
+                                <p class="text-center text-sm font-bold text-text-muted">Cafe Stamp</p>
+                            </div>
+
+                            <!-- Gradient / Minimal -->
+                            <div class="flex flex-col gap-3 group/icon4">
+                                <div id="target-icon4"
+                                    class="aspect-square bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center relative shadow-sm group-hover/icon4:scale-105 transition-transform duration-300 overflow-hidden">
+                                    <div
+                                        class="absolute -top-4 -right-4 w-24 h-24 bg-white/30 rounded-full blur-xl pointer-events-none">
+                                    </div>
+                                    <div class="relative flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-white text-7xl drop-shadow-md"
+                                            style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+                                        <span
+                                            class="material-symbols-outlined absolute top-[26px] left-[26px] text-primary text-[24px]"
+                                            style="font-variation-settings: 'FILL' 1;">spa</span>
+                                    </div>
+                                    <div
+                                        class="absolute -bottom-1 right-0 flex justify-center w-full pb-3 opacity-0 group-hover/icon4:opacity-100 transition-opacity duration-200 z-10">
+                                        <div class="flex gap-1">
+                                            <button
+                                                class="dl-btn bg-surface/80 backdrop-blur p-1.5 rounded-full border border-border-color text-primary hover:bg-primary hover:text-white shadow-sm flex items-center justify-center"
+                                                title="Download PNG (512px)" data-type="png"
+                                                data-target="target-icon4"><span
+                                                    class="material-symbols-outlined text-[16px]">image</span></button>
+                                            <button
+                                                class="dl-btn bg-surface/80 backdrop-blur p-1.5 rounded-full border border-border-color text-primary hover:bg-primary hover:text-white shadow-sm flex items-center justify-center"
+                                                title="Download SVG" data-type="svg" data-target="target-icon4"><span
+                                                    class="material-symbols-outlined text-[16px]">data_object</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-center text-sm font-bold text-text-muted">Sunset Mug</p>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Banner Graphic Card -->
+                    <section
+                        class="bg-surface border-2 border-border-color shadow-card rounded-xl overflow-hidden flex flex-col">
+                        <div id="target-header"
+                            class="bg-white dark:bg-background-dark w-full aspect-[3/1] relative overflow-hidden group bg-grid-pattern flex items-center justify-center">
+                            <!-- Geometric Guides Overlay (decorative) -->
+                            <div class="absolute inset-0 pointer-events-none opacity-20">
+                                <div
+                                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 border border-primary rounded-full">
+                                </div>
+                                <div
+                                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 border border-primary rounded-full">
+                                </div>
+                                <div
+                                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1px] h-full bg-primary">
+                                </div>
+                                <div
+                                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1px] bg-primary">
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center gap-4 z-10 scale-75 md:scale-100">
+                                <div
+                                    class="text-primary font-heading font-black text-6xl md:text-8xl tracking-tight relative drop-shadow-sm">
+                                    Cafe Maple
+                                    <span
+                                        class="material-symbols-outlined absolute -top-4 -right-8 text-4xl md:text-6xl text-primary animate-pulse">vape_free</span>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20">
+                                <button
+                                    class="dl-btn bg-surface p-1.5 rounded-md border border-border-color text-primary hover:bg-primary hover:text-white shadow-sm flex items-center justify-center"
+                                    title="Download PNG (1500x500px)" data-type="png" data-target="target-header"><span
+                                        class="material-symbols-outlined text-[16px]">image</span></button>
+                                <button
+                                    class="dl-btn bg-surface p-1.5 rounded-md border border-border-color text-primary hover:bg-primary hover:text-white shadow-sm flex items-center justify-center"
+                                    title="Download SVG" data-type="svg" data-target="target-header"><span
+                                        class="material-symbols-outlined text-[16px]">data_object</span></button>
+                            </div>
+                        </div>
+                        <div class="p-4 border-t-2 border-border-color flex justify-between items-center bg-surface">
+                            <span class="text-sm font-bold text-text-muted uppercase tracking-wider">Server Header
+                                Graphic</span>
+                            <span
+                                class="text-xs bg-border-color px-2 py-1 rounded text-text-main font-mono">1500x500px</span>
+                        </div>
+                    </section>
+                </div>
+                <!-- Column 2: Color System (Spans 3 cols on XL) -->
+                <div class="flex flex-col gap-6 xl:col-span-3 w-full h-full">
+                    <section class="bg-surface border-2 border-border-color shadow-card rounded-xl p-6 h-full relative">
+                        <!-- Sticky Note Decoration -->
+                        <div
+                            class="absolute -top-3 -right-3 w-24 h-24 bg-accent shadow-lg transform rotate-6 flex items-center justify-center p-2 text-center z-20">
+                            <span class="font-hand text-text-main text-lg leading-tight -rotate-6">Click to copy!</span>
+                            <!-- Tape effect -->
+                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-3 bg-white/40 rotate-2"></div>
+                        </div>
+                        <h2 class="text-text-main text-xl font-heading font-bold mb-6">Color Schema</h2>
+                        <div id="color-cards-container" class="flex flex-col gap-4">
+                            <!-- Color Card: Primary -->
+                            <div class="group cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+                                <div
+                                    class="bg-surface rounded-lg border-2 border-border-color overflow-hidden flex shadow-sm">
+                                    <div class="w-20 h-20 bg-primary relative flex-shrink-0">
+                                        <div
+                                            class="absolute top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white/50 rounded-full shadow-inner">
+                                        </div>
+                                    </div>
+                                    <div class="p-3 flex flex-col justify-center flex-grow">
+                                        <span class="font-heading font-bold text-text-main text-lg">
+                                            <span class="dark:hidden">Maple Syrup</span>
+                                            <span class="hidden dark:inline">Autumn Sunset</span>
+                                        </span>
+                                        <span
+                                            class="font-mono text-text-muted text-sm bg-background-light px-2 py-0.5 rounded w-fit group-hover:bg-primary group-hover:text-white transition-colors">
+                                            <span class="dark:hidden">#D98C5F</span>
+                                            <span class="hidden dark:inline">#F08547</span>
+                                        </span>
+                                        <span class="text-xs text-text-muted mt-1">Primary Actions</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Color Card: Background Light -->
+                            <div class="group cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+                                <div
+                                    class="bg-surface rounded-lg border-2 border-border-color overflow-hidden flex shadow-sm">
+                                    <div
+                                        class="w-20 h-20 bg-background-light relative border-r-2 border-border-color flex-shrink-0">
+                                        <div
+                                            class="absolute top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white/50 border border-border-color rounded-full shadow-inner">
+                                        </div>
+                                    </div>
+                                    <div class="p-3 flex flex-col justify-center flex-grow">
+                                        <span class="font-heading font-bold text-text-main text-lg">
+                                            <span class="dark:hidden">Cream Paper</span>
+                                            <span class="hidden dark:inline">Midnight Charcoal</span>
+                                        </span>
+                                        <span
+                                            class="font-mono text-text-muted text-sm bg-background-light px-2 py-0.5 rounded w-fit group-hover:bg-background-light group-hover:text-text-main transition-colors border border-transparent group-hover:border-border-color">
+                                            <span class="dark:hidden">#FDFBF7</span>
+                                            <span class="hidden dark:inline">#1A1614</span>
+                                        </span>
+                                        <span class="text-xs text-text-muted mt-1">Backgrounds</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Color Card: Surface -->
+                            <div class="group cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+                                <div
+                                    class="bg-surface rounded-lg border-2 border-border-color overflow-hidden flex shadow-sm">
+                                    <div
+                                        class="w-20 h-20 bg-surface relative border-r-2 border-border-color flex-shrink-0">
+                                        <div
+                                            class="absolute top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white/50 border border-border-color rounded-full shadow-inner">
+                                        </div>
+                                    </div>
+                                    <div class="p-3 flex flex-col justify-center flex-grow">
+                                        <span class="font-heading font-bold text-text-main text-lg">
+                                            <span class="dark:hidden">Steamed Milk</span>
+                                            <span class="hidden dark:inline">Rich Cocoa</span>
+                                        </span>
+                                        <span
+                                            class="font-mono text-text-muted text-sm bg-background-light px-2 py-0.5 rounded w-fit group-hover:bg-surface group-hover:text-text-main transition-colors border border-transparent group-hover:border-border-color">
+                                            <span class="dark:hidden">#FFFEF0</span>
+                                            <span class="hidden dark:inline">#2D241F</span>
+                                        </span>
+                                        <span class="text-xs text-text-muted mt-1">Surfaces &amp; Cards</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Color Card: Text Main -->
+                            <div class="group cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+                                <div
+                                    class="bg-surface rounded-lg border-2 border-border-color overflow-hidden flex shadow-sm">
+                                    <div class="w-20 h-20 bg-text-main relative flex-shrink-0">
+                                        <div
+                                            class="absolute top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white/20 rounded-full shadow-inner">
+                                        </div>
+                                    </div>
+                                    <div class="p-3 flex flex-col justify-center flex-grow">
+                                        <span class="font-heading font-bold text-text-main text-lg">
+                                            <span class="dark:hidden">Coffee Grounds</span>
+                                            <span class="hidden dark:inline">Cream Silk</span>
+                                        </span>
+                                        <span
+                                            class="font-mono text-text-muted text-sm bg-background-light px-2 py-0.5 rounded w-fit group-hover:bg-text-main group-hover:text-surface transition-colors">
+                                            <span class="dark:hidden">#5C4B43</span>
+                                            <span class="hidden dark:inline">#FDFAF3</span>
+                                        </span>
+                                        <span class="text-xs text-text-muted mt-1">Main Text</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Color Card: Accent -->
+                            <div class="group cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+                                <div
+                                    class="bg-surface rounded-lg border-2 border-border-color overflow-hidden flex shadow-sm">
+                                    <div class="w-20 h-20 bg-accent relative flex-shrink-0">
+                                        <div
+                                            class="absolute top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white/50 rounded-full shadow-inner">
+                                        </div>
+                                    </div>
+                                    <div class="p-3 flex flex-col justify-center flex-grow">
+                                        <span class="font-heading font-bold text-text-main text-lg">Afternoon Sun</span>
+                                        <span
+                                            class="font-mono text-text-muted text-sm bg-background-light px-2 py-0.5 rounded w-fit group-hover:bg-accent group-hover:text-text-main transition-colors border border-transparent group-hover:border-border-color">#F4D35E</span>
+                                        <span class="text-xs text-text-muted mt-1">Accents &amp; Highlights</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- Column 3: Typography & Specimens (Spans 4 cols on XL) -->
+                <div class="flex flex-col gap-6 xl:col-span-4 w-full">
+                    <h2 class="text-text-main text-xl font-heading font-bold pl-2">Typography Specimens</h2>
+                    <!-- Heading Card -->
+                    <div class="bg-surface border-2 border-border-color shadow-card rounded-xl p-8 relative">
+                        <span
+                            class="absolute top-4 right-4 text-xs font-bold bg-background-light px-2 py-1 rounded border border-border-color text-text-muted uppercase">Fredoka
+                            // 600</span>
+                        <div class="space-y-6">
+                            <div>
+                                <h1 class="font-heading font-semibold text-4xl text-text-main mb-1">Heading 1</h1>
+                                <p class="text-text-muted text-xs font-mono">36px / SemiBold</p>
+                            </div>
+                            <div class="w-full h-px bg-border-color"></div>
+                            <div>
+                                <h2 class="font-heading font-semibold text-2xl text-text-main mb-1">The quick brown fox
+                                </h2>
+                                <p class="text-text-muted text-xs font-mono">24px / SemiBold</p>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-medium text-xl text-text-main mb-1">Jumps over the lazy
+                                    dog.</h3>
+                                <p class="text-text-muted text-xs font-mono">20px / Medium</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Body Text Card -->
+                    <div class="bg-surface border-2 border-border-color shadow-card rounded-xl p-8 relative">
+                        <span
+                            class="absolute top-4 right-4 text-xs font-bold bg-background-light px-2 py-1 rounded border border-border-color text-text-muted uppercase">Nunito
+                            // 400</span>
+                        <div class="font-body text-text-main space-y-4">
+                            <p class="leading-relaxed">
+                                Use Nunito for all body copy. It provides excellent readability while maintaining the
+                                soft, rounded character of the brand.
+                            </p>
+                            <p class="text-sm leading-relaxed text-text-muted">
+                                Small text (14px) should be used for metadata, timestamps, and secondary information.
+                                Ensure contrast ratios remain high enough for accessibility.
+                            </p>
+                            <div class="flex gap-4 pt-2">
+                                <span class="font-bold">Bold Text</span>
+                                <span class="italic">Italic Text</span>
+                                <span class="underline decoration-primary decoration-2 underline-offset-4">Linked
+                                    Text</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Handwritten Note Card -->
+                    <div class="relative py-4 px-2">
+                        <div
+                            class="bg-accent shadow-floating p-6 w-full transform -rotate-2 relative z-10 transition-transform hover:rotate-0 duration-300 cursor-help">
+                            <!-- Tape -->
+                            <div
+                                class="absolute -top-3 left-1/2 -translate-x-1/2 w-32 h-8 bg-white/30 rotate-1 backdrop-blur-sm">
+                            </div>
+                            <h3 class="font-hand text-2xl text-text-main mb-2 mt-2">Notes from the Cafe:</h3>
+                            <ul
+                                class="font-hand text-lg text-text-main space-y-1 list-disc list-inside marker:text-primary">
+                                <li>Always keep it cozy</li>
+                                <li>Round your corners!</li>
+                                <li>Soft shadows only</li>
+                            </ul>
+                            <div class="absolute bottom-4 right-4 opacity-50">
+                                <span class="material-symbols-outlined text-3xl">local_florist</span>
+                            </div>
+                        </div>
+                        <!-- Shadow placeholder for layout stability if needed, though absolute handles it -->
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Area -->
+            <footer class="mt-12 border-t-2 border-border-color border-dashed pt-8 text-center">
+                <p class="text-text-muted font-body text-sm">
+                    Designed for the "Slow Web" movement. © Cafe Maple Design System.
+                </p>
+            </footer>
+        </div>
+    </div>
+    <script>
+        const themeBtn = document.getElementById('themeToggleBtn');
+        const toggleTheme = () => {
+            document.documentElement.classList.toggle('dark');
+        };
+        if (themeBtn) {
+            themeBtn.addEventListener('click', toggleTheme);
+        }
+
+        // Color Copy Logic
+        const colorContainer = document.getElementById('color-cards-container');
+        if (colorContainer) {
+            const colorCards = colorContainer.querySelectorAll('.group.cursor-pointer');
+            colorCards.forEach(card => {
+                card.addEventListener('click', async () => {
+                    const isDark = document.documentElement.classList.contains('dark');
+                    const spanLight = card.querySelector('.dark\\:hidden').textContent.trim();
+                    const spanDark = card.querySelector('.hidden.dark\\:inline').textContent.trim();
+                    const hexToCopy = isDark ? spanDark : spanLight;
+
+                    try {
+                        await navigator.clipboard.writeText(hexToCopy);
+                        // Animation feedback
+                        const originalTransform = card.style.transform;
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(() => { card.style.transform = originalTransform; }, 150);
+
+                        // Show brief toast
+                        const toast = document.createElement('div');
+                        toast.textContent = `Copied ${hexToCopy}`;
+                        toast.className = 'fixed bottom-4 left-1/2 -translate-x-1/2 bg-text-main text-background-light px-4 py-2 rounded-full font-bold shadow-lg z-50 transition-opacity duration-300';
+                        document.body.appendChild(toast);
+                        setTimeout(() => {
+                            toast.style.opacity = '0';
+                            setTimeout(() => toast.remove(), 300);
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy color: ', err);
+                    }
+                });
+            });
+        }
+
+        // Image Download Logic using html-to-image
+        const dlButtons = document.querySelectorAll('.dl-btn');
+        dlButtons.forEach(btn => {
+            btn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                e.stopPropagation(); // prevent triggering parent clicks if any
+                const targetId = btn.getAttribute('data-target');
+                const type = btn.getAttribute('data-type');
+                const element = document.getElementById(targetId);
+
+                if (!element) return;
+
+                // Add loading state
+                const originalIcon = btn.innerHTML;
+                btn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">sync</span>';
+
+                // Hide download buttons temporarily during capture
+                const btnContainer = element.querySelector('.opacity-0');
+                if (btnContainer) btnContainer.style.display = 'none';
+
+                try {
+                    let dataUrl;
+                    const scaleClass = Array.from(element.classList).find(c => c.startsWith('scale-'));
+                    let originalScale = '';
+                    if (scaleClass) {
+                        originalScale = element.style.transform;
+                        element.style.transform = 'scale(1)'; // reset scale for accurate capture
+                    }
+
+                    if (type === 'svg') {
+                        dataUrl = await htmlToImage.toSvg(element, { quality: 1.0 });
+                    } else {
+                        dataUrl = await htmlToImage.toPng(element, { quality: 1.0, pixelRatio: 2 });
+                    }
+
+                    if (scaleClass) element.style.transform = originalScale;
+
+                    const link = document.createElement('a');
+                    link.download = `cafemaple-${targetId.replace('target-', '')}.${type}`;
+                    link.href = dataUrl;
+                    link.click();
+                } catch (error) {
+                    console.error('Error generating image', error);
+                    alert("Failed to download image. Please try again.");
+                } finally {
+                    if (btnContainer) btnContainer.style.display = 'flex';
+                    btn.innerHTML = originalIcon;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
