@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Patrick+Hand&family=Manrope:wght@200..800&display=swap"
-        rel="stylesheet" />
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&family=M+PLUS+2:wght@100..900&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Zen+Maru+Gothic&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
     <!-- Tailwind -->
@@ -33,9 +33,9 @@
                         "shadow-color": "rgb(var(--color-shadow) / <alpha-value>)",
                     },
                     fontFamily: {
-                        "display": ["Manrope", "sans-serif"],
-                        "heading": ["Fredoka", "sans-serif"],
-                        "body": ["Nunito", "sans-serif"],
+                        "display": ['"M PLUS Rounded 1c"', "sans-serif"],
+                        "heading": ['"M PLUS Rounded 1c"', "sans-serif"],
+                        "body": ['"M PLUS Rounded 1c"', "sans-serif"],
                         "hand": ["Patrick Hand", "cursive"],
                     },
                     borderRadius: {
@@ -91,10 +91,13 @@
     class="bg-background-light dark:bg-background-dark text-text-main font-body antialiased min-h-screen flex items-center justify-center selection:bg-primary/20 p-4">
 
     <div
-        class="w-full max-w-md bg-surface border-2 border-border-color shadow-floating rounded-2xl p-8 relative flex flex-col items-center">
+        class="w-full max-w-md bg-surface border-2 border-border-color shadow-floating rounded-2xl p-8 relative flex flex-col items-center mt-6">
         <!-- Decoration -->
-        <div class="absolute -top-6 bg-background-light border-2 border-border-color rounded-full p-2 shadow-card">
-            <span class="material-symbols-outlined text-primary text-4xl block">local_cafe</span>
+        <div
+            class="absolute -top-10 bg-background-light border-2 border-border-color rounded-full shadow-card w-20 h-20 flex items-center justify-center overflow-hidden">
+            <img src="Light%20Icon.png" alt="Cafe Maple Logo Light" class="w-full h-full object-cover dark:hidden" />
+            <img src="Dark%20icon.png" alt="Cafe Maple Logo Dark"
+                class="w-full h-full object-cover hidden dark:block" />
         </div>
 
         <button id="themeToggleBtn"
@@ -104,24 +107,11 @@
             <span class="material-symbols-outlined text-[18px] hidden dark:block">light_mode</span>
         </button>
 
-        <h1 class="font-heading font-bold text-3xl mt-6 mb-2 text-center">Cafe Maple</h1>
-        <p class="text-text-muted text-center mb-8 font-medium">Welcome to our digital cozy corner.</p>
+        <h1 class="font-heading font-black text-3xl mt-6 mb-2 text-center text-[rgb(var(--color-primary))]">Cafe Maple
+        </h1>
+        <p class="text-text-muted text-center mb-8 font-medium">デジタルの小さな居場所へようこそ。</p>
 
         <div class="w-full flex flex-col gap-4">
-            <a href="design.html"
-                class="group relative bg-background-light border-2 border-border-color rounded-xl p-4 flex items-center gap-4 hover:-translate-y-1 hover:shadow-card hover:border-primary transition-all duration-200">
-                <div
-                    class="bg-primary/10 text-primary p-2 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
-                    <span class="material-symbols-outlined">palette</span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="font-heading font-semibold text-lg">Brand Identity</h2>
-                    <p class="text-sm text-text-muted">Design system & assets</p>
-                </div>
-                <span
-                    class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">arrow_forward_ios</span>
-            </a>
-
             <a href="terms.html"
                 class="group relative bg-background-light border-2 border-border-color rounded-xl p-4 flex items-center gap-4 hover:-translate-y-1 hover:shadow-card hover:border-primary transition-all duration-200">
                 <div
@@ -129,8 +119,8 @@
                     <span class="material-symbols-outlined">gavel</span>
                 </div>
                 <div class="flex-grow">
-                    <h2 class="font-heading font-semibold text-lg">Terms of Service</h2>
-                    <p class="text-sm text-text-muted">Rules & guidelines</p>
+                    <h2 class="font-heading font-black text-lg">利用規約</h2>
+                    <p class="text-sm font-bold text-text-muted">ルールとガイドライン</p>
                 </div>
                 <span
                     class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">arrow_forward_ios</span>
@@ -143,8 +133,22 @@
                     <span class="material-symbols-outlined">shield</span>
                 </div>
                 <div class="flex-grow">
-                    <h2 class="font-heading font-semibold text-lg">Privacy Policy</h2>
-                    <p class="text-sm text-text-muted">Data protection & info</p>
+                    <h2 class="font-heading font-black text-lg">プライバシーポリシー</h2>
+                    <p class="text-sm font-bold text-text-muted">データの保護について</p>
+                </div>
+                <span
+                    class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">arrow_forward_ios</span>
+            </a>
+
+            <a href="design.html"
+                class="group relative bg-background-light border-2 border-border-color rounded-xl p-4 flex items-center gap-4 hover:-translate-y-1 hover:shadow-card hover:border-primary transition-all duration-200">
+                <div
+                    class="bg-primary/10 text-primary p-2 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">palette</span>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="font-heading font-black text-lg">ブランドアイデンティティ</h2>
+                    <p class="text-sm font-bold text-text-muted">デザインシステムと素材</p>
                 </div>
                 <span
                     class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">arrow_forward_ios</span>
@@ -157,9 +161,17 @@
     </div>
 
     <script>
+        // Init theme from localStorage
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
         const themeBtn = document.getElementById('themeToggleBtn');
         const toggleTheme = () => {
             document.documentElement.classList.toggle('dark');
+            localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
         };
         if (themeBtn) {
             themeBtn.addEventListener('click', toggleTheme);
