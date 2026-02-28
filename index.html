@@ -100,14 +100,19 @@
 
     <div
         class="w-full max-w-md bg-surface border-2 border-border-color shadow-floating rounded-2xl p-8 relative flex flex-col items-center mt-6">
-        <!-- Decoration -->
-        <div
-            class="absolute -top-10 bg-background-light border-2 border-border-color rounded-full shadow-card w-20 h-20 flex items-center justify-center overflow-hidden">
-            <img src="assets/Light%20Icon.png" alt="Cafe Maple Logo Light"
-                class="w-full h-full object-cover dark:hidden" />
-            <img src="assets/Dark%20icon.png" alt="Cafe Maple Logo Dark"
-                class="w-full h-full object-cover hidden dark:block" />
-        </div>
+        <!-- Decoration and Title as a link -->
+        <a href="https://cafemaple.cc/" target="_blank" rel="noopener noreferrer"
+            class="group w-full font-heading font-black text-3xl mt-14 mb-2 text-center text-[rgb(var(--color-primary))] group-hover:text-[rgb(var(--color-primary-hover))] transition-colors">
+            <div
+                class="absolute left-1/2 -translate-x-1/2 -top-10 bg-background-light border-2 border-border-color rounded-full shadow-card w-20 h-20 flex items-center justify-center overflow-hidden group-hover:-translate-y-1 group-hover:shadow-floating transition-all duration-200">
+                <img src="assets/Light%20Icon.png" alt="Cafe Maple Logo Light"
+                    class="w-full h-full object-cover dark:hidden" />
+                <img src="assets/Dark%20icon.png" alt="Cafe Maple Logo Dark"
+                    class="w-full h-full object-cover hidden dark:block" />
+            </div>
+
+            Cafe Maple
+        </a>
 
         <button id="themeToggleBtn"
             class="absolute top-4 right-4 bg-background-light border-2 border-border-color shadow-sm hover:translate-y-[-1px] hover:shadow-card transition-all duration-200 p-2 rounded-full text-text-muted hover:text-primary flex items-center justify-center cursor-pointer"
@@ -116,8 +121,6 @@
             <span class="material-symbols-outlined text-[18px] hidden dark:block">light_mode</span>
         </button>
 
-        <h1 class="font-heading font-black text-3xl mt-6 mb-2 text-center text-[rgb(var(--color-primary))]">Cafe Maple
-        </h1>
         <p class="text-text-muted text-center mb-8 font-medium">デジタルの小さな居場所へようこそ。</p>
 
         <div class="w-full flex flex-col gap-4">
